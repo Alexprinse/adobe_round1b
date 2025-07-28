@@ -1,0 +1,20 @@
+# Round 1B - Persona-Driven Document Intelligence
+# Core dependencies for PDF processing and ML models
+
+# PDF Processing
+PyMuPDF==1.23.26
+pdfplumber==0.10.3
+
+# Machine Learning and NLP
+sentence-transformers==2.2.2
+transformers==4.35.2
+torch==2.1.1
+scikit-learn==1.3.2
+numpy==1.24.4
+
+# Text Processing
+nltk==3.8.1
+
+# Utilities
+pathlib2==2.3.7.post1
+typing-extensions==4.8.0
