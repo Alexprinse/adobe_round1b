@@ -1,0 +1,58 @@
+# Git files
+.git
+.gitignore
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.DS_Store
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Documentation build
+docs/_build/
+
+# Test files
+test/
+tests/
+*.test
+
+# Sample data (if any)
+samples/
+examples/
+
+# Output directories
+output/
+outputs/
+
+# Input directories (will be mounted)
+input/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

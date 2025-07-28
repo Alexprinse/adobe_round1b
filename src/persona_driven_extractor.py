@@ -1587,7 +1587,6 @@ class DocumentIntelligenceSystem:
 def main():
     """Main execution"""
     parser = argparse.ArgumentParser(description="Universal Document Intelligence System")
-    parser.add_argument("input_dir", help="Input directory")
     parser.add_argument("output_dir", help="Output directory")
     args = parser.parse_args()
     
@@ -1595,13 +1594,19 @@ def main():
         print("❌ PyMuPDF is required but not installed")
         return
     
+    input_dir = "/app/input"
     print("🚀 Universal Document Intelligence System")
-    print(f"📂 Input: {args.input_dir}")
+    print(f"📂 Input: {input_dir}")
     print(f"📂 Output: {args.output_dir}")
+    
+    # Check if input directory exists
+    input_path = Path(input_dir)
+    if not input_path.exists():
+        print(f"❌ Error: Input directory {input_dir} does not exist")
+        return
     
     extractor = DocumentIntelligenceSystem()
     
-    input_path = Path(args.input_dir)
     collections_processed = 0
     collections_total = 0
     

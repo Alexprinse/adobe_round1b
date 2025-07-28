@@ -10,25 +10,31 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from document_intelligence import DocumentIntelligenceSystem
+from persona_driven_extractor import DocumentIntelligenceSystem
 
 def main():
     """Main execution function"""
-    if len(sys.argv) != 3:
-        print("Usage: python main.py <input_directory> <output_directory>")
-        print("Example: python main.py inputs outputs")
+    if len(sys.argv) != 2:
+        print("Usage: python main.py <output_directory>")
+        print("Example: python main.py /app/output")
+        print("Note: Input files are expected to be in /app/input directory")
         sys.exit(1)
     
-    input_dir = sys.argv[1]
-    output_dir = sys.argv[2]
+    input_dir = "/app/input"
+    output_dir = sys.argv[1]
     
     print("🚀 Universal Document Intelligence System")
     print(f"📂 Input: {input_dir}")
     print(f"📂 Output: {output_dir}")
     
+    # Check if input directory exists
+    input_path = Path(input_dir)
+    if not input_path.exists():
+        print(f"❌ Error: Input directory {input_dir} does not exist")
+        sys.exit(1)
+    
     extractor = DocumentIntelligenceSystem()
     
-    input_path = Path(input_dir)
     collections_processed = 0
     collections_total = 0
     
